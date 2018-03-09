@@ -1,4 +1,5 @@
 Current Objects on to-do list: 
+  -Add project collaborators
   -Await new member in slack group and add to contributors page
   -Proof information on contributors.txt page for turn-in
   -Brainstorm ideas for minimum project requirements
