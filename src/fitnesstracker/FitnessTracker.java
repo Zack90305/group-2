@@ -88,7 +88,7 @@ public class FitnessTracker extends Application {
         navigateToExercisesSceneButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
                mainScene.getChildren().remove(1);
-               mainScene.getChildren().add(excercisesScene);
+               mainScene.getChildren().add(exercisesScene);
             }
         });
         
