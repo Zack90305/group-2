@@ -30,7 +30,7 @@ public class FitnessTracker extends Application {
     VBox navBar = new VBox();
     Parent foodScene = null;
     Parent bodyScene = null;
-    Parent excercisesScene = null;
+    Parent exercisesScene = null;
     
     @Override
     public void start(Stage primaryStage) {
@@ -50,7 +50,7 @@ public class FitnessTracker extends Application {
         }
         
         try {
-            excercisesScene = FXMLLoader.load(getClass().getResource("excercisesScene.fxml"));
+            exercisesScene = FXMLLoader.load(getClass().getResource("exercisesScene.fxml"));
         }
         catch (Exception e) {
             System.out.println(e);
@@ -82,10 +82,10 @@ public class FitnessTracker extends Application {
         });
         
         Image exercisesIcon = new Image("/images/excercisesIcon.png", 62, 62, false, false);
-        Button navigateToExcercisesSceneButton = new Button();
-        navigateToExcercisesSceneButton.setPrefSize(62, 62);
-        navigateToExcercisesSceneButton.setGraphic(new ImageView(exercisesIcon));
-        navigateToExcercisesSceneButton.setOnAction(new EventHandler<ActionEvent>() {
+        Button navigateToExercisesSceneButton = new Button();
+        navigateToExercisesSceneButton.setPrefSize(62, 62);
+        navigateToExercisesSceneButton.setGraphic(new ImageView(exercisesIcon));
+        navigateToExercisesSceneButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
                mainScene.getChildren().remove(1);
                mainScene.getChildren().add(excercisesScene);
@@ -94,7 +94,7 @@ public class FitnessTracker extends Application {
         
         navBar.getChildren().add(navigateToFoodSceneButton);
         navBar.getChildren().add(navigateToBodySceneButton);
-        navBar.getChildren().add(navigateToExcercisesSceneButton);
+        navBar.getChildren().add(navigateToExercisesSceneButton);
 
         mainScene.getChildren().add(navBar);
         mainScene.getChildren().add(bodyScene);
