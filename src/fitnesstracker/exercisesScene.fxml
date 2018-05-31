@@ -45,7 +45,7 @@
             <Separator layoutX="636.0" layoutY="172.0" orientation="VERTICAL" prefHeight="266.0" prefWidth="4.0" />
             <VBox layoutX="255.0" layoutY="227.0" prefHeight="220.0" prefWidth="378.0" spacing="20.0">
                <children>
-                  <RadioButton mnemonicParsing="false" text="Squals">
+                  <RadioButton mnemonicParsing="false" text="Squats">
                      <toggleGroup>
                         <ToggleGroup fx:id="choice1" />
                      </toggleGroup>
