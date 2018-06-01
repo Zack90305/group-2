@@ -1,0 +1,22 @@
+{
+  "5/31/18" : {
+    "exercise" : {
+      "exercise" : "squats",
+      "calories" : 25
+    },
+    "exercise" : {
+      "exercise" : "swimming",
+      "calories" : 35
+    }
+  },
+  "6/1/18" : {
+    "exercise" : {
+      "exercise" : "squats",
+      "calories" : 25
+    },
+    "exercise" : {
+      "exercise" : "swimming",
+      "calories" : 35
+    }
+  }
+}
