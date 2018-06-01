@@ -12,6 +12,7 @@ import java.sql.Connection;
 import java.sql.DatabaseMetaData;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.time.LocalDateTime;
@@ -183,5 +184,43 @@ public class DataInput {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
+    }
+    
+    public static String GetDailyWorkOutCalories(){
+        String calories = "0";
+        
+        LocalDateTime now = LocalDateTime.now();
+        int year = now.getYear() - 2000;
+        int month = now.getMonthValue();
+        int day = now.getDayOfMonth();
+        String dateString = "" + month + "/" + day + "/" + year;
+        
+        String sql = "SELECT calories FROM exercise WHERE date = ?";
+       
+        int runningCalories = 0;
+        
+        try (Connection conn = DriverManager.getConnection(exerciseFile)){
+            System.out.println("connected");
+            
+            PreparedStatement pstmt  = conn.prepareStatement(sql);
+            pstmt.setString(1, dateString);
+            
+            ResultSet rs    = pstmt.executeQuery();
+            
+            int count = 0;
+            while(rs.next()){
+                runningCalories += rs.getInt("calories");
+                count++;
+            }
+            
+            System.out.println("iterated " + count);
+            
+            return "" + runningCalories;
+            
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }   
+        
+        return calories;
     }
 }
