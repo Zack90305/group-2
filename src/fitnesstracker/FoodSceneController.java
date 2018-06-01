@@ -5,7 +5,10 @@
  */
 package fitnesstracker;
 
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.geometry.Insets;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -13,6 +16,10 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 
 /**
  *
@@ -33,37 +40,158 @@ public class FoodSceneController {
 
     public void breakfastButtonClicked(){
 
-        String mine = Integer.toString(count);
-        System.out.println("Breakfast button clicked");
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Breakfast Dialog");
-        alert.setHeaderText(null);
-        alert.setContentText("You just pressed the breakfast button!");
-        alert.showAndWait();
-
-
+        Stage breakfastStage = new Stage();
+        
+        VBox questions = new VBox();
+        
+        HBox nameBox = new HBox();
+        Text name = new Text("Name ");
+        TextField foodName = new TextField();
+        nameBox.getChildren().addAll(name, foodName);
+        
+        HBox caloriesBox = new HBox();
+        Text calories = new Text("calories ");
+        TextField foodCalories = new TextField();
+        caloriesBox.getChildren().addAll(calories, foodCalories);
+        
+        HBox fatBox = new HBox();
+        Text fat = new Text("Fat ");
+        TextField foodFat = new TextField();
+        fatBox.getChildren().addAll(fat, foodFat);
+        
+        HBox proteinBox = new HBox();
+        Text protein = new Text("Protein ");
+        TextField foodProtein = new TextField();
+        proteinBox.getChildren().addAll(protein, foodProtein);
+        
+        HBox carbBox = new HBox();
+        Text carbs = new Text("Carbs ");
+        TextField foodCarbs = new TextField();
+        carbBox.getChildren().addAll(carbs, foodCarbs);
+        
+        Button submitButton = new Button("Submit");
+        submitButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+                DataInput.EnterMeal('b',
+                                    name.getText(),
+                                    Integer.parseInt(foodCalories.getText()),
+                                    Integer.parseInt(foodCarbs.getText()),
+                                    Integer.parseInt(foodFat.getText()),
+                                    Integer.parseInt(foodProtein.getText()));
+                breakfastStage.close();
+            }
+        });
+        
+        questions.getChildren().addAll(nameBox, caloriesBox, fatBox, proteinBox, carbBox, submitButton);
+        
+        
+        Scene scene = new Scene(questions, 500, 170);
+        breakfastStage.setScene(scene);
+        breakfastStage.show();
 
 
     }
 
     public void lunchButtonClicked(){
-        System.out.println("Lunch Button clicked");
-
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Lunch Dialog");
-        alert.setHeaderText(null);
-        alert.setContentText("You just pressed the lunch button!");
-        alert.showAndWait();
+        Stage lunchStage = new Stage();
+        
+        VBox questions = new VBox();
+        
+        HBox nameBox = new HBox();
+        Text name = new Text("Name ");
+        TextField foodName = new TextField();
+        nameBox.getChildren().addAll(name, foodName);
+        
+        HBox caloriesBox = new HBox();
+        Text calories = new Text("calories ");
+        TextField foodCalories = new TextField();
+        caloriesBox.getChildren().addAll(calories, foodCalories);
+        
+        HBox fatBox = new HBox();
+        Text fat = new Text("Fat ");
+        TextField foodFat = new TextField();
+        fatBox.getChildren().addAll(fat, foodFat);
+        
+        HBox proteinBox = new HBox();
+        Text protein = new Text("Protein ");
+        TextField foodProtein = new TextField();
+        proteinBox.getChildren().addAll(protein, foodProtein);
+        
+        HBox carbBox = new HBox();
+        Text carbs = new Text("Carbs ");
+        TextField foodCarbs = new TextField();
+        carbBox.getChildren().addAll(carbs, foodCarbs);
+        
+        Button submitButton = new Button("Submit");
+        submitButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+                DataInput.EnterMeal('b',
+                                    name.getText(),
+                                    Integer.parseInt(foodCalories.getText()),
+                                    Integer.parseInt(foodCarbs.getText()),
+                                    Integer.parseInt(foodFat.getText()),
+                                    Integer.parseInt(foodProtein.getText()));
+                lunchStage.close();
+            }
+        });
+        
+        questions.getChildren().addAll(nameBox, caloriesBox, fatBox, proteinBox, carbBox, submitButton);
+        
+        
+        Scene scene = new Scene(questions, 500, 170);
+        lunchStage.setScene(scene);
+        lunchStage.show();
     }
 
     public void dinnerButtonClicked(){
-        System.out.println("Dinner button clicked");
-
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Dinner Dialog");
-        alert.setHeaderText(null);
-        alert.setContentText("You just pressed the dinner button!");
-        alert.showAndWait();
+        Stage dinnerStage = new Stage();
+        
+        VBox questions = new VBox();
+        
+        HBox nameBox = new HBox();
+        Text name = new Text("Name ");
+        TextField foodName = new TextField();
+        nameBox.getChildren().addAll(name, foodName);
+        
+        HBox caloriesBox = new HBox();
+        Text calories = new Text("calories ");
+        TextField foodCalories = new TextField();
+        caloriesBox.getChildren().addAll(calories, foodCalories);
+        
+        HBox fatBox = new HBox();
+        Text fat = new Text("Fat ");
+        TextField foodFat = new TextField();
+        fatBox.getChildren().addAll(fat, foodFat);
+        
+        HBox proteinBox = new HBox();
+        Text protein = new Text("Protein ");
+        TextField foodProtein = new TextField();
+        proteinBox.getChildren().addAll(protein, foodProtein);
+        
+        HBox carbBox = new HBox();
+        Text carbs = new Text("Carbs ");
+        TextField foodCarbs = new TextField();
+        carbBox.getChildren().addAll(carbs, foodCarbs);
+        
+        Button submitButton = new Button("Submit");
+        submitButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+                DataInput.EnterMeal('d',
+                                    name.getText(),
+                                    Integer.parseInt(foodCalories.getText()),
+                                    Integer.parseInt(foodCarbs.getText()),
+                                    Integer.parseInt(foodFat.getText()),
+                                    Integer.parseInt(foodProtein.getText()));
+                dinnerStage.close();
+            }
+        });
+        
+        questions.getChildren().addAll(nameBox, caloriesBox, fatBox, proteinBox, carbBox, submitButton);
+        
+        
+        Scene scene = new Scene(questions, 500, 170);
+        dinnerStage.setScene(scene);
+        dinnerStage.show();
 
     }
 
