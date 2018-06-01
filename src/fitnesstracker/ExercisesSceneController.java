@@ -32,7 +32,10 @@ import javafx.scene.image.Image;
 public class ExercisesSceneController {
     
     @FXML private Text caloriesLostText;
-    @FXML private ImageView clockPic;
+    
+    public void initialize() {
+        caloriesLostText.setText(DataInput.GetDailyWorkOutCalories());
+    }
     
     public void handler1(){
         Stage timerStage = new Stage();
