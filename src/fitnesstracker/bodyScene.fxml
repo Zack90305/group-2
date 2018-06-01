@@ -14,7 +14,7 @@
 
 <AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fitnesstracker.BodySceneController">
    <children>
-      <TitledPane alignment="CENTER" collapsible="false" layoutX="386.0" layoutY="67.0" prefHeight="333.0" prefWidth="509.0" text="OVERVIEW" textAlignment="CENTER">
+      <TitledPane alignment="CENTER" collapsible="false" layoutX="386.0" layoutY="77.0" prefHeight="333.0" prefWidth="509.0" text="OVERVIEW" textAlignment="CENTER">
          <font>
             <Font size="18.0" />
          </font>
