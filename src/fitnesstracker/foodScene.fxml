@@ -36,11 +36,11 @@
                             <children>
                                 <VBox prefHeight="100.0" prefWidth="74.0">
                                     <children>
-                              <TextField id="net" fx:id="totalNum" alignment="CENTER" editable="false" prefHeight="60.0" prefWidth="74.0" style="-fx-background-color: transparent;" text="0">
+                              <TextField id="net" fx:id="totalNum" alignment="CENTER" editable="false" prefHeight="60.0" prefWidth="74.0" style="-fx-background-color: transparent;" text="1800">
                                  <font>
                                     <Font size="18.0" />
                                  </font></TextField>
-                                        <Label alignment="CENTER" prefHeight="61.0" prefWidth="81.0" text="TOTAL" />
+                                        <Label alignment="CENTER" prefHeight="61.0" prefWidth="81.0" text="GOAL " />
                                     </children>
                                 </VBox>
                                 <VBox prefHeight="100.0" prefWidth="35.0">

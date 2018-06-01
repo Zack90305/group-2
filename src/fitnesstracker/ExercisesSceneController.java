@@ -11,7 +11,6 @@ import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
@@ -19,6 +18,11 @@ import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import javafx.geometry.Insets;
 import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
+import javafx.fxml.FXML;
+import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
+import javafx.scene.image.Image;
 
 
 /**
@@ -27,9 +31,8 @@ import javafx.scene.control.TextField;
  */
 public class ExercisesSceneController {
     
-    public void test() {
-        System.out.println("asdfdsa");
-    }
+    @FXML private Text caloriesLostText;
+    @FXML private ImageView clockPic;
     
     public void handler1(){
         Stage timerStage = new Stage();
@@ -124,13 +127,15 @@ public class ExercisesSceneController {
                 
                 
             Scene scene = new Scene(vbox, 300, 250);
-       
+            
             timerStage.setTitle("Stopwatch!");
             timerStage.setScene(scene);
             timerStage.show();
     }
     
-    public void addSquatsExerciseButton() {
+    
+    @FXML
+    public void addSquatsExerciseButton() {      
         this.renderUserInputPopup();
     }
     
@@ -183,6 +188,7 @@ public class ExercisesSceneController {
             @Override public void handle(ActionEvent e) {
                 DataInput.EnterExercise("exercise", Integer.parseInt(userCalorieInput.getText()));
                 System.out.println(userCalorieInput.getText());
+                caloriesLostText.setText(DataInput.GetDailyWorkOutCalories()); 
                 exerciseStage.close();
             }
         });

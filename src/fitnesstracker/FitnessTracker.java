@@ -23,11 +23,14 @@ import javafx.stage.Stage;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
+import javafx.scene.text.Text;
+import java.lang.Integer;
 
 
 /**
@@ -40,6 +43,7 @@ public class FitnessTracker extends Application {
     Parent foodScene = null;
     Parent bodyScene = null;
     Parent exercisesScene = null;
+    @FXML private Text caloriesLostText;
     
     @Override
     public void start(Stage primaryStage) {
@@ -64,6 +68,9 @@ public class FitnessTracker extends Application {
         catch (Exception e) {
             System.out.println(e);
         }
+        
+        //caloriesLostText.setText(DataInput.GetDailyWorkOutCalories());
+        
         
         navBar.setSpacing(40);
         navBar.setPadding(new Insets(100, 40, 0, 40));
@@ -111,7 +118,89 @@ public class FitnessTracker extends Application {
         primaryStage.setTitle("Fitness Tracker");
         primaryStage.setScene(new Scene(mainScene, 1450, 720));
         primaryStage.show();
+        
+        if( DataInput.GetWeight()[0].equals("no")) {
+            System.out.println("sdf");
+            this.renderUserPopup();
+        }
     }
+    
+        
+    public void renderUserPopup() {
+        Stage exerciseStage = new Stage();
+        HBox sexDataEntry = new HBox(20);
+        HBox weightDataEntry = new HBox(20);
+        HBox heightDataEntry = new HBox(20);
+        VBox dataBox = new VBox(20);
+        Label emptySpace = new Label(" ");
+        
+        dataBox.getChildren().add(emptySpace);
+        
+        Label questionForSexLabel = new Label("Enter Your Sex (M/F): ");
+        Label emptySpace2 = new Label(" ");
+        TextField userSexInput = new TextField();
+        sexDataEntry.getChildren().add(emptySpace2);
+        sexDataEntry.getChildren().add(questionForSexLabel);
+        sexDataEntry.getChildren().add(userSexInput);
+        
+        questionForSexLabel.setPadding(new Insets(0,0,0,10));
+        questionForSexLabel.setStyle("-fx-font: 18 arial");
+        
+        
+        Label questionForWeightLabel = new Label("Enter Your Weight: ");
+        Label emptySpace4 = new Label(" ");
+        TextField userWeightInput = new TextField();
+        weightDataEntry.getChildren().add(emptySpace4);
+        weightDataEntry.getChildren().add(questionForWeightLabel);
+        weightDataEntry.getChildren().add(userWeightInput);
+        
+        questionForWeightLabel.setPadding(new Insets(0,0,0,10));
+        questionForWeightLabel.setStyle("-fx-font: 18 arial");
+        
+        Label questionForHeightLabel = new Label("Enter Your Height in Centimeters: ");
+        Label emptySpace5 = new Label(" ");
+        TextField userHeightInput = new TextField();
+        heightDataEntry.getChildren().add(emptySpace5);
+        heightDataEntry.getChildren().add(questionForHeightLabel);
+        heightDataEntry.getChildren().add(userHeightInput);
+        
+        questionForHeightLabel.setPadding(new Insets(0,0,0,10));
+        questionForHeightLabel.setStyle("-fx-font: 18 arial");
+        
+        
+        /*
+        caloriesBurned.setPadding(new Insets(0,0,0,10));
+        dataEntry.getChildren().add(caloriesBurned);
+        caloriesBurned.setStyle("-fx-font: 18 arial");
+        */
+        
+        dataBox.getChildren().add(sexDataEntry);
+        dataBox.getChildren().add(weightDataEntry);
+        dataBox.getChildren().add(heightDataEntry);
+        
+        
+        HBox enterButton = new HBox(230);
+        Button submitButton = new Button("Submit");
+        submitButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+                DataInput.EnterWeight(userSexInput.getText().charAt(0), 
+                        Integer.parseInt(userHeightInput.getText()), 
+                        Integer.parseInt(userWeightInput.getText()));
+                exerciseStage.close();
+            }
+        });
+        Label emptySpace3 = new Label(" ");
+        enterButton.getChildren().add(emptySpace3);
+        enterButton.getChildren().add(submitButton);
+        
+        dataBox.getChildren().add(enterButton);
+        
+        Scene scene = new Scene(dataBox, 500, 250);
+        exerciseStage.setScene(scene);
+        exerciseStage.show();
+    }
+
+  
    
     /**
      * @param args the command line arguments

@@ -247,7 +247,7 @@
             </VBox>		
             <Button layoutX="297.0" layoutY="436.0" mnemonicParsing="false" onAction="#handler1" prefHeight="118.0" prefWidth="141.0" styleClass="timerButton" stylesheets="@styles.css">
                <graphic>
-                  <ImageView fitHeight="125.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" styleClass="timerButton">
+                  <ImageView fx:id="clockPic" fitHeight="125.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" styleClass="timerButton">
                      <image>
                         <Image url="@../images/timerIcon.png" />
                      </image>
@@ -258,7 +258,7 @@
                   <Font size="24.0" />
                </font>
             </Text>
-            <Text layoutX="825.0" layoutY="462.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+            <Text fx:id="caloriesLostText" layoutX="825.0" layoutY="462.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
                <font>
                   <Font size="24.0" />
                </font>
