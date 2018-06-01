@@ -207,13 +207,9 @@ public class DataInput {
             
             ResultSet rs    = pstmt.executeQuery();
             
-            int count = 0;
             while(rs.next()){
                 runningCalories += rs.getInt("calories");
-                count++;
             }
-            
-            System.out.println("iterated " + count);
             
             return "" + runningCalories;
             
@@ -222,5 +218,51 @@ public class DataInput {
         }   
         
         return calories;
+    }
+    
+    public static String GetDailyMacros(String macro){
+        
+        LocalDateTime now = LocalDateTime.now();
+        int year = now.getYear() - 2000;
+        int month = now.getMonthValue();
+        int day = now.getDayOfMonth();
+        String dateString = "" + month + "/" + day + "/" + year;
+        
+        String sql;
+        if (macro == "fat"){
+             sql = "SELECT fat FROM meals WHERE date = ?";
+        } else if (macro == "protein"){
+             sql = "SELECT protein FROM meals WHERE date = ?";
+        } else if (macro == "carbs"){
+             sql = "SELECT carbs FROM meals WHERE date = ?";
+        } else if (macro == "calories"){
+             sql = "SELECT calories FROM meals WHERE date = ?";
+        } else {
+            return "-1";
+        }
+       
+        int runningCalories = 0;
+        
+        try (Connection conn = DriverManager.getConnection(mealsFile)){
+            System.out.println("connected");
+            
+            PreparedStatement pstmt  = conn.prepareStatement(sql);
+            //pstmt.setString(1, macro);
+            pstmt.setString(1, dateString);
+            
+            ResultSet rs    = pstmt.executeQuery();
+            
+            while(rs.next()){
+                runningCalories += rs.getInt(macro);
+            }
+            
+            return "" + runningCalories;
+            
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }   
+        
+        
+        return "0";
     }
 }
