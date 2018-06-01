@@ -17,6 +17,9 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
+import javafx.geometry.Insets;
+import javafx.scene.control.TextField;
+
 
 /**
  *
@@ -29,7 +32,6 @@ public class ExercisesSceneController {
     }
     
     public void handler1(){
-        System.out.println("asdfdsa");
         Stage timerStage = new Stage();
         VBox vbox = new VBox();
         vbox.setSpacing(10);
@@ -126,5 +128,70 @@ public class ExercisesSceneController {
             timerStage.setTitle("Stopwatch!");
             timerStage.setScene(scene);
             timerStage.show();
+    }
+    
+    public void addSquatsExerciseButton() {
+        this.renderUserInputPopup();
+    }
+    
+    public void addDeadliftsExerciseButton() {
+        this.renderUserInputPopup();
+    }
+    public void addBenchExerciseButton() {
+        this.renderUserInputPopup();
+    }
+    public void addRowExerciseButton() {
+        this.renderUserInputPopup();
+    }
+    public void addRunningExerciseButton() {
+        this.renderUserInputPopup();
+    }
+    public void addCyclingExerciseButton() {
+        this.renderUserInputPopup();
+    }
+    public void addSwimmingExerciseButton() {
+        this.renderUserInputPopup();
+    }
+    public void addJumpropeExerciseButton() {
+        this.renderUserInputPopup();
+    }
+    
+    public void renderUserInputPopup() {
+        Stage exerciseStage = new Stage();
+        HBox dataEntry = new HBox(20);
+        VBox dataBox = new VBox(20);
+        Label emptySpace = new Label(" ");
+        
+        dataBox.getChildren().add(emptySpace);
+        
+        Label caloriesBurned = new Label("How many calories did you burn?");
+        Label emptySpace2 = new Label(" ");
+        dataEntry.getChildren().add(emptySpace2);
+        
+        caloriesBurned.setPadding(new Insets(0,0,0,10));
+        dataEntry.getChildren().add(caloriesBurned);
+        caloriesBurned.setStyle("-fx-font: 18 arial");
+        
+        TextField userCalorieInput = new TextField();
+        
+        dataEntry.getChildren().add(userCalorieInput);
+        dataBox.getChildren().add(dataEntry);
+        
+        HBox enterButton = new HBox(230);
+        Button submitButton = new Button("Submit");
+        submitButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+                System.out.println("test");
+            }
+        });
+        Label emptySpace3 = new Label(" ");
+        enterButton.getChildren().add(emptySpace3);
+        enterButton.getChildren().add(submitButton);
+        
+        dataBox.getChildren().add(enterButton);
+        
+        Scene scene = new Scene(dataBox, 500, 170);
+        exerciseStage.setScene(scene);
+        exerciseStage.show();
     }
 }

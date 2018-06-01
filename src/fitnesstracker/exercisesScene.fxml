@@ -16,7 +16,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<TitledPane alignment="CENTER" animated="false" graphicTextGap="7.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" text="EXCERCISE" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fitnesstracker.ExercisesSceneController">
+<TitledPane alignment="CENTER" animated="false" collapsible="false" graphicTextGap="7.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" text="EXCERCISE" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fitnesstracker.ExercisesSceneController">
   <content>
     <AnchorPane minHeight="0.0" minWidth="0.0">
          <children>
@@ -57,7 +57,7 @@
                               <Insets left="12.0" top="5.0" />
                            </HBox.margin>
                         </Label>
-                        <Button mnemonicParsing="false" prefHeight="29.0" prefWidth="31.0" styleClass="addExercisesButton" stylesheets="@styles.css">
+                        <Button mnemonicParsing="false" onAction="#addSquatsExerciseButton" prefHeight="29.0" prefWidth="31.0" styleClass="addExercisesButton" stylesheets="@styles.css">
                            <graphic>
                               <ImageView fitHeight="21.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -81,7 +81,7 @@
                               <Insets left="12.0" top="5.0" />
                            </HBox.margin>
                         </Label>
-                        <Button mnemonicParsing="false" prefHeight="29.0" prefWidth="31.0" styleClass="addExercisesButton" stylesheets="@styles.css">
+                        <Button mnemonicParsing="false" onAction="#addDeadliftsExerciseButton" prefHeight="29.0" prefWidth="31.0" styleClass="addExercisesButton" stylesheets="@styles.css">
                            <graphic>
                               <ImageView fitHeight="21.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -105,7 +105,7 @@
                               <Insets left="12.0" top="5.0" />
                            </HBox.margin>
                         </Label>
-                        <Button mnemonicParsing="false" prefHeight="29.0" prefWidth="31.0" styleClass="addExercisesButton" stylesheets="@styles.css">
+                        <Button mnemonicParsing="false" onAction="#addBenchExerciseButton" prefHeight="29.0" prefWidth="31.0" styleClass="addExercisesButton" stylesheets="@styles.css">
                            <graphic>
                               <ImageView fitHeight="21.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -129,7 +129,7 @@
                               <Insets left="12.0" top="5.0" />
                            </HBox.margin>
                         </Label>
-                        <Button mnemonicParsing="false" prefHeight="29.0" prefWidth="31.0" styleClass="addExercisesButton" stylesheets="@styles.css">
+                        <Button mnemonicParsing="false" onAction="#addRowExerciseButton" prefHeight="29.0" prefWidth="31.0" styleClass="addExercisesButton" stylesheets="@styles.css">
                            <graphic>
                               <ImageView fitHeight="21.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -157,7 +157,7 @@
                               <Insets left="12.0" top="5.0" />
                            </HBox.margin>
                         </Label>
-                        <Button mnemonicParsing="false" prefHeight="29.0" prefWidth="31.0" styleClass="addExercisesButton" stylesheets="@styles.css">
+                        <Button mnemonicParsing="false" onAction="#addRunningExerciseButton" prefHeight="29.0" prefWidth="31.0" styleClass="addExercisesButton" stylesheets="@styles.css">
                            <graphic>
                               <ImageView fitHeight="21.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -181,9 +181,9 @@
                               <Insets left="12.0" top="5.0" />
                            </HBox.margin>
                         </Label>
-                        <Button mnemonicParsing="false" prefHeight="29.0" prefWidth="31.0" styleClass="addExercisesButton" stylesheets="@styles.css">
+                        <Button mnemonicParsing="false" onAction="#addCyclingExerciseButton" prefHeight="29.0" prefWidth="31.0" styleClass="addExercisesButton" stylesheets="@styles.css">
                            <graphic>
-                              <ImageView fitHeight="21.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fitHeight="21.0" fitWidth="21.0" onDragDetected="#addCyclingExerciseButton" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../images/addExerciseIcon.png" />
                                  </image>
@@ -205,9 +205,9 @@
                               <Insets left="12.0" top="5.0" />
                            </HBox.margin>
                         </Label>
-                        <Button mnemonicParsing="false" prefHeight="29.0" prefWidth="31.0" styleClass="addExercisesButton" stylesheets="@styles.css">
+                        <Button mnemonicParsing="false" onAction="#addSwimmingExerciseButton" prefHeight="29.0" prefWidth="31.0" styleClass="addExercisesButton" stylesheets="@styles.css">
                            <graphic>
-                              <ImageView fitHeight="21.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fitHeight="21.0" fitWidth="21.0" onDragDetected="#addSwimmingExerciseButton" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../images/addExerciseIcon.png" />
                                  </image>
@@ -229,9 +229,9 @@
                               <Insets left="12.0" top="5.0" />
                            </HBox.margin>
                         </Label>
-                        <Button mnemonicParsing="false" prefHeight="29.0" prefWidth="31.0" styleClass="addExercisesButton" stylesheets="@styles.css">
+                        <Button mnemonicParsing="false" onAction="#addJumpropeExerciseButton" prefHeight="29.0" prefWidth="31.0" styleClass="addExercisesButton" stylesheets="@styles.css">
                            <graphic>
-                              <ImageView fitHeight="21.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fitHeight="21.0" fitWidth="21.0" onDragDetected="#addJumpropeExerciseButton" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../images/addExerciseIcon.png" />
                                  </image>
