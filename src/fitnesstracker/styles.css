@@ -8,3 +8,10 @@ and open the template in the editor.
     Author     : Luis
 */
 
+.addExercisesButton {
+  -fx-background-radius: 80px;
+}
+
+.timerButton {
+  -fx-background-radius: 80px;
+}

@@ -5,20 +5,29 @@
  */
 package fitnesstracker;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.application.Application;
 import static javafx.application.Application.launch;
+import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.Pane;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 
 
 /**
@@ -81,7 +90,7 @@ public class FitnessTracker extends Application {
             }
         });
         
-        Image exercisesIcon = new Image("/images/excercisesIcon.png", 62, 62, false, false);
+        Image exercisesIcon = new Image("/images/exercisesIcon.png", 62, 62, false, false);
         Button navigateToExercisesSceneButton = new Button();
         navigateToExercisesSceneButton.setPrefSize(62, 62);
         navigateToExercisesSceneButton.setGraphic(new ImageView(exercisesIcon));
@@ -103,8 +112,7 @@ public class FitnessTracker extends Application {
         primaryStage.setScene(new Scene(mainScene, 1450, 720));
         primaryStage.show();
     }
-    
-
+   
     /**
      * @param args the command line arguments
      */
