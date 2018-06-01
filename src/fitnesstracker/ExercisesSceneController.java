@@ -181,7 +181,9 @@ public class ExercisesSceneController {
         Button submitButton = new Button("Submit");
         submitButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
-                System.out.println("test");
+                DataInput.EnterExercise("exercise", Integer.parseInt(userCalorieInput.getText()));
+                System.out.println(userCalorieInput.getText());
+                exerciseStage.close();
             }
         });
         Label emptySpace3 = new Label(" ");
