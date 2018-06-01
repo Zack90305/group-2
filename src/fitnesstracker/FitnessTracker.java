@@ -106,7 +106,7 @@ public class FitnessTracker extends Application {
         navBar.getChildren().add(navigateToExercisesSceneButton);
 
         mainScene.getChildren().add(navBar);
-        mainScene.getChildren().add(bodyScene);
+        mainScene.getChildren().add(foodScene);
   
         primaryStage.setTitle("Fitness Tracker");
         primaryStage.setScene(new Scene(mainScene, 1450, 720));
