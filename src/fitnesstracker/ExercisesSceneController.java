@@ -5,13 +5,9 @@
  */
 package fitnesstracker;
 
-import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -23,7 +19,6 @@ import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import javafx.geometry.Insets;
 import javafx.scene.control.TextField;
-import javafx.scene.text.Text;
 
 
 /**
@@ -186,9 +181,7 @@ public class ExercisesSceneController {
         Button submitButton = new Button("Submit");
         submitButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
-                DataInput.EnterExercise("exercise", Integer.parseInt(userCalorieInput.getText()));
-                System.out.println(userCalorieInput.getText());
-                exerciseStage.close();
+                System.out.println("test");
             }
         });
         Label emptySpace3 = new Label(" ");
