@@ -156,6 +156,30 @@ public class DataInput {
         }   
     }
     
+    public static String[] GetWeight(){
+        String[] body = new String[3];
+        body[0] = "no";
+        
+        String sql = "SELECT gender, weight, height FROM weight";
+        
+        try (Connection conn = DriverManager.getConnection(bodyWeightFile)){
+            System.out.println("connected");
+            
+            Statement stmt  = conn.createStatement();
+            ResultSet rs    = stmt.executeQuery(sql);
+                
+                body[0] = rs.getString("gender");
+                body[1] = "" + rs.getInt("weight");
+                body[2] = "" + rs.getInt("height");
+
+            
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        
+        return body;
+    }
+    
     public static void EnterMeal(char mealTime, String food, int calories, int carbs,
                                     int fat, int protein){
       
