@@ -19,7 +19,7 @@ import java.time.LocalDateTime;
 
 /**
  *
- * @author david_000
+ * @author David
  */
 public class DataInput {
     

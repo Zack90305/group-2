@@ -21,13 +21,11 @@ import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
-import javafx.scene.image.ImageView;
-import javafx.scene.image.Image;
 
 
 /**
  *
- * @author Luis
+ * @author Abibou and Zack
  */
 public class ExercisesSceneController {
     

@@ -12,7 +12,7 @@ import javafx.scene.image.ImageView;
 
 /**
  *
- * @author Luis
+ * @author Jesus and James
  */
 public class BodySceneController {
     

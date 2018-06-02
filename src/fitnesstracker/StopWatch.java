@@ -8,7 +8,7 @@ package fitnesstracker;
 
 /**
  *
- * @author beeb
+ * @author Abibou
  */
 public class StopWatch {
     
